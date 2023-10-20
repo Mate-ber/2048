@@ -2,6 +2,12 @@ import turtle
 import random
 import time
 STRING_DISTANCE = 100
+turtle_colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink"]
+colors = {0: "black"}
+it = 2
+while it <= 2048:
+    colors.update({it: random.choice(turtle_colors)})
+    it *= 2
 
 
 class Logic:
@@ -20,13 +26,14 @@ class Logic:
 
     def print(self):
         self.tur.clear()
-
         self.tur.goto(-200, 200)
         xcor = -200
         ycor = 200
         for i in range(0, self.board_height):
             for j in range(0, self.board_width):
-                self.tur.write(self.cubs[i][j], align="left", font=("Courier", 25, "normal"))
+                key = self.cubs[i][j]
+                self.tur.pencolor(colors[key])
+                self.tur.write(self.cubs[i][j], align="left", font=("Comic Sans MS", 25, "normal"))
                 xcor += STRING_DISTANCE
                 self.tur.goto(xcor, ycor)
             xcor -= (4 * STRING_DISTANCE)
@@ -165,10 +172,6 @@ class Logic:
         lose.hideturtle()
         lose.goto(0, 0)
         lose.write(f"You Lost!", align="center", font=("Courier", 30, "normal"))
-
-
-
-
 
 
 

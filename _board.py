@@ -147,7 +147,7 @@ class Logic:
         win.color("black")
         win.hideturtle()
         win.goto(0, 0)
-        win.write(f"You Won!", align="center", font=("Courier", 30, "normal"))
+        win.write(f"You Won!", align="center", font=("Comic Sans MS", 30, "normal"))
 
     def if_lose(self):
         for i in range(self.board_height):
@@ -171,7 +171,7 @@ class Logic:
         lose.color("black")
         lose.hideturtle()
         lose.goto(0, 0)
-        lose.write(f"You Lost!", align="center", font=("Courier", 30, "normal"))
+        lose.write(f"You Lost!", align="center", font=("Comic Sans MS", 30, "normal"))
 
 
 

@@ -59,8 +59,8 @@ class Logic:
             for i in range(self.board_height):
                 z = i
                 while z > 0 and self.cubs[z-1][j] == 0:
-                    self.cubs[z-1][j] = self.cubs[i][j]
-                    self.cubs[i][j] = 0
+                    self.cubs[z-1][j] = self.cubs[z][j]
+                    self.cubs[z][j] = 0
                     z -= 1
 
     def down(self):
@@ -80,8 +80,8 @@ class Logic:
                 if self.cubs[i][j] != 0:
                     z = i
                     while z < self.board_height-1 and self.cubs[z + 1][j] == 0:
-                        self.cubs[z + 1][j] = self.cubs[i][j]
-                        self.cubs[i][j] = 0
+                        self.cubs[z + 1][j] = self.cubs[z][j]
+                        self.cubs[z][j] = 0
                         z += 1
 
     def left(self):
@@ -101,8 +101,8 @@ class Logic:
                 if self.cubs[i][j] != 0:
                     z = j
                     while z > 0 and self.cubs[i][z-1] == 0:
-                        self.cubs[i][z-1] = self.cubs[i][j]
-                        self.cubs[i][j] = 0
+                        self.cubs[i][z-1] = self.cubs[i][z]
+                        self.cubs[i][z] = 0
                         z -= 1
 
     def right(self):
@@ -122,8 +122,8 @@ class Logic:
                 if self.cubs[i][j] != 0:
                     z = j
                     while z < self.board_width-1 and self.cubs[i][z+1] == 0:
-                        self.cubs[i][z+1] = self.cubs[i][j]
-                        self.cubs[i][j] = 0
+                        self.cubs[i][z+1] = self.cubs[i][z]
+                        self.cubs[i][z] = 0
                         z += 1
 
     def if_win(self):

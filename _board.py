@@ -2,11 +2,10 @@ import turtle
 import random
 STRING_DISTANCE = 100
 
-#xcor j ycor i
 
 class Logic:
     def __init__(self):
-        self.cubs = [[1024, 1024, 0, 0],
+        self.cubs = [[0, 0, 0, 0],
                      [0, 0, 0, 0],
                      [0, 0, 0, 0],
                      [0, 0, 0, 0]]
